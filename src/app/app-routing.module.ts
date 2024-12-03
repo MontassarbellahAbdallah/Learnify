@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AjouterAdminComponent } from './ajouter-admin/ajouter-admin.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',component:AjouterAdminComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
