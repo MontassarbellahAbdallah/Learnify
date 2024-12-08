@@ -24,14 +24,24 @@ public class AdminRestController {
     @Autowired
     AdminService adminService;
     @RequestMapping(method = RequestMethod.POST)
-    public Admin ajoutAdmin(@RequestBody Admin admin){
-        admin.setMdp(this.bCryptPasswordEncoder.encode(admin.getMdp()));
-        Admin saveUser= adminRepository.save(admin);
-        return adminService.ajouterAdmin(admin);
+    ResponseEntity<?> ajoutAdmin(@RequestBody Admin admin){
+        HashMap<String,Object>response=new HashMap<>();
+        if (adminRepository.existsByEmail(admin.getEmail())){
+            response.put("Message","email deja existe");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+
+        } else{
+
+
+            admin.setMdp(this.bCryptPasswordEncoder.encode(admin.getMdp()));
+            Admin saveuser= adminRepository.save(admin);
+            //return adminService.ajouterAdmin(admin);
+            return ResponseEntity.status(HttpStatus.CREATED).body(saveuser);
+        }
     }
     @RequestMapping(method = RequestMethod.PUT,value ="/{id}")
     public Admin modifierAdmin(@RequestBody Admin admin, @PathVariable("id")Long id){
-        admin.setMdp(this.bCryptPasswordEncoder.encode(admin.getMdp()));
+            admin.setMdp(this.bCryptPasswordEncoder.encode(admin.getMdp()));
         Admin saveuser= adminRepository.save(admin);
         return adminService.modifierAdmin(admin);
     }
