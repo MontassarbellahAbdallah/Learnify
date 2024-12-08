@@ -38,7 +38,7 @@
                     
                     <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-2">
                         <div class="flex-grow-1">
-                            <h4 class="font-18 mb-0">Administrateur</h4>
+                            <h4 class="font-18 mb-0">Categorie</h4>
                         </div>
 
                         <div class="text-end">
@@ -46,7 +46,7 @@
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Ajouter</a></li>
                                 
                                 
-                                <li class="breadcrumb-item active">Administrateur</li>
+                                <li class="breadcrumb-item active">Categorie</li>
                             </ol>
                         </div>
                     </div>
@@ -61,56 +61,31 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title">Ajouter Administrateur</h5>
+                                <h5 class="card-title">Ajouter Categorie</h5>
                             </div>
-                            <form [formGroup]="adminForm" (ngSubmit)="addNewAdmin()">
+                            <form [formGroup]="CategoryForm" (ngSubmit)="addnewCateg()">
                                 <div class="card-body pt-2">
                                     <div class="form-group row">
-                                        <label class="col-lg-2 col-form-label">Nom</label>
+                                        <label  class="col-lg-2 col-form-label">Titre</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="text" formControlName="nom" placeholder="nom" >
+                                            <input class="form-control" type="text" formControlName="titre" placeholder="Titre" >
                                         </div>
-                                        <!-- <div *ngIf="nom?.touched &&nom?.invalid"><small class="text-danger " *ngIf="nom?.errors?.['required']">nom est obiligatoire</small></div> -->
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-2 col-form-label">Prenom</label>
+                                        <label  class="col-lg-2 col-form-label">Description</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="search" formControlName="prenom" placeholder="prenom">
+                                            <input class="form-control" type="search" formControlName="description" placeholder="Description">
                                         </div>
-                                        <!-- <div *ngIf="prenom?.touched &&prenom?.invalid"><small class="text-danger " *ngIf="prenom?.errors?.['required']">prenom est obiligatoire</small></div> -->
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-2 col-form-label">Email</label>
+                                        <label  class="col-lg-2 col-form-label">image</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="email" formControlName="email" placeholder="Email">
+                                            <input class="form-control" type="file" formControlName="img" placeholder="image" >
                                         </div>
-                                        <!-- <div *ngIf="email?.touched &&email?.invalid"><small class="text-danger " *ngIf="email?.errors?.['required']">email est obiligatoire</small></div>   -->
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-2 col-form-label">Mot de passe</label>
-                                        <div class="col-lg-8">
-                                            <input class="form-control" type="password" formControlName="mdp" placeholder="Mot de passe">
-                                        </div>
-                                        <!-- <div *ngIf="mdp?.touched &&mdp?.invalid"><small class="text-danger " *ngIf="mdp?.errors?.['required']">mot de passe est obiligatoire</small></div>   -->
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-2 col-form-label">Role</label>
-                                        <div class="col-lg-8">
-                                            <select class="form-select mb-3" formControlName="role" >
-                                                <option selected>Choisir</option>
-                                                <option value="1">Admin</option>
-                                                <option value="2">Sous_Admin</option>
-                                            </select>
-                                        </div>
-                                        <!-- <div *ngIf="role?.touched &&role?.invalid"><small class="text-danger " *ngIf="role?.errors?.['required']">role est obiligatoire</small></div>   -->
-
                                     </div>
                                     
+                                    
                                     <button type="submit" class="btn btn-primary">Ajouter</button>
-                                    <br/>
-                                    <span [innerHtml]="this.messageCommande"></span>
                                 
                                 </div>
                             </form> <!-- end card-body -->

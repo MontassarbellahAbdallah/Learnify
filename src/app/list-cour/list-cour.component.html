@@ -43,7 +43,7 @@
                     
                     <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-2">
                         <div class="flex-grow-1">
-                            <h4 class="font-18 mb-0">Liste Admin</h4>
+                            <h4 class="font-18 mb-0">Liste Cour</h4>
                         </div>
 
                         <div class="text-end">
@@ -52,7 +52,7 @@
                                 
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Liste</a></li>
                                 
-                                <li class="breadcrumb-item active">Liste Admin</li>
+                                <li class="breadcrumb-item active">Liste Cour</li>
                             </ol>
                         </div>
                     </div>
@@ -68,8 +68,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title">Liste Adminisatrateur</h5>
-                                <a href="aa"><button class="btn btn-success"> <span class="mdi mdi-plus"></span>Ajouter </button></a>
+                                <h5 class="card-title">Liste Cour</h5>
                                 
                             </div>
 
@@ -79,28 +78,33 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
+                                            <th>Categorie</th>
+                                            <th>Durée</th>
+                                            <th>formateur</th>
+                                            <th>Description</th>
+                                            <th>Image</th>
+                                            <th>prix</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
 
                                     <tbody>
-                                        <tr *ngFor="let letAdmin of listAdmin1">
-                                            <td>{{letAdmin.id}}</td>
-                                            <td>{{letAdmin.nom}}</td>
-                                            <td>{{letAdmin.prenom}}</td>
-                                            <td>{{letAdmin.email}}</td>
-                                            <td>{{letAdmin.role}}</td>
-                                            
+                                        <tr *ngFor="let letCour of listCour1">
+                                            <td>{{letCour.id}}</td>
+                                            <td>{{letCour.name}}</td>
+                                            <td>{{letCour.categoryCo}}</td>
+                                            <td>{{letCour.dure}}</td>
+                                            <td>{{letCour.formateur}}</td>
+                                            <td>{{letCour.descCo}}</td>
+                                            <td>{{letCour.image}}</td>
+                                            <td>{{letCour.prix}}</td>
                                             <td>
                                                 <div class="button-list">
-                                                <button class="btn btn-danger"(click)="deleteAdmin(letAdmin)"><i class="mdi mdi-close"></i></button>
+                                                <button class="btn btn-icon waves-effect waves-light btn-danger"><i class="mdi mdi-close"></i></button>
                                                 
-                                                <a href="ma"><button class="btn btn-warning"> <span class="mdi mdi-pencil"></span> </button></a>
-                                                
+                                                <a href="mc"><button class="btn btn-icon waves-effect waves-light btn-warning"> <span class="mdi mdi-pencil"></span> </button></a>
+                                                <a href="ac"><button class="btn btn-icon waves-effect waves-light btn-success"> <span class="mdi mdi-plus"></span> </button></a>
                                                 </div>
                                             </td>
                                         </tr>
